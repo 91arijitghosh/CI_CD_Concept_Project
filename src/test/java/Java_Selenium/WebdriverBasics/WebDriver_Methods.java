@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.Test;
 
 
@@ -14,8 +15,13 @@ public class WebDriver_Methods {
 
     @Test
     public void Run() throws InterruptedException {
+
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments();
         WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new FirefoxDriver(options);
         driver.get("https://www.google.com");
         System.out.print(driver.getCurrentUrl());
         driver.manage().window().maximize();
