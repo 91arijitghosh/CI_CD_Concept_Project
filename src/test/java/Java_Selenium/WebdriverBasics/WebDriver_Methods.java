@@ -17,6 +17,8 @@ public class WebDriver_Methods {
     public void Run() throws InterruptedException {
 
         FirefoxOptions options = new FirefoxOptions();
+        String firefoxBinaryPath = "/usr/bin/firefox";
+        options.setBinary(firefoxBinaryPath);
         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments();
